@@ -48,3 +48,5 @@ footer {
   border-top: 1px solid #eee;
   padding-top: 10px;
 }
+
+.course-name { font-weight: 500; color: #1a7a5e; }
