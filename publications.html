@@ -1,144 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications – Andrea Freites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-    header { border-bottom: 2px solid #222; padding-bottom: 1rem; margin-bottom: 2rem; }
-    header h1 { font-size: 1.6rem; font-weight: normal; letter-spacing: 0.02em; }
-    header h1 a { text-decoration: none; color: #222; }
-    header h1 a:hover { text-decoration: underline; }
-    nav { margin-top: 0.5rem; font-size: 0.9rem; font-family: Arial, sans-serif; }
-    nav a { color: #222; text-decoration: none; margin-right: 1.2rem; }
-    nav a:hover { text-decoration: underline; }
-    nav a.active { font-weight: bold; text-decoration: underline; }
-    h2 { font-size: 1.2rem; font-weight: bold; margin: 2rem 0 0.75rem; letter-spacing: 0.01em; }
-    p { margin-bottom: 0.8rem; }
-    .pub-list { list-style: none; padding: 0; }
-    .pub-list li { margin-bottom: 1rem; padding-left: 0; border-left: 3px solid #e0e0e0; padding-left: 0.9rem; }
-    .pub-list li.under-review { border-left-color: #aab7c4; }
-    .pub-list li.published { border-left-color: #1a5276; }
-    .pub-status { font-size: 0.82rem; font-family: Arial, sans-serif; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
-    .section { margin-bottom: 2.5rem; }
-    footer { margin-top: 3rem; border-top: 1px solid #ccc; padding-top: 1rem; font-size: 0.85rem; font-family: Arial, sans-serif; color: #555; }
-    a { color: #1a5276; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: #222; background: #fff; }
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    nav { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 1.25rem; border-bottom: 1px solid #ddd; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 0.75rem; }
+    .nav-name { font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: #222; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.88rem; list-style: none; }
+    .nav-links a { color: #555; text-decoration: none; }
+    .nav-links a:hover { color: #222; }
+    .nav-links a.active { color: #222; font-weight: 500; border-bottom: 1.5px solid #222; padding-bottom: 1px; }
+    h1 { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 1.75rem; color: #222; }
+    h2 { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #222; }
+    a { color: #3d5c35; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    em { font-style: italic; }
+    .section { margin-bottom: 1rem; }
+    .pub-item { margin-bottom: 1.1rem; padding-left: 0.9rem; border-left: 2px solid #e0e0e0; }
+    .pub-item.published { border-left-color: #3d5c35; }
+    .pub-item.under-review { border-left-color: #ccc; }
+    .pub-status { font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: #aaa; margin-bottom: 0.1rem; }
+    .pub-text { font-size: 0.92rem; line-height: 1.7; color: #333; }
+    .pub-text em { font-style: italic; }
+    footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 0.5px solid #e8e8e8; font-size: 0.85rem; color: #888; }
+    @media (max-width: 620px) { nav { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="index.html">Andrea Freites</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html" class="active">Publications</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="cv.html">CV</a>
-    </nav>
-  </header>
+<div class="page-wrap">
 
-  <main>
-    <h2>Publications</h2>
+  <nav>
+    <a href="index.html" class="nav-name">Andrea Freites</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Bio</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
 
-    <div class="section">
-      <h2>Peer-Reviewed Journal Articles</h2>
+  <h1>Publications</h1>
 
-      <ul class="pub-list">
-        <li class="under-review">
-          <div class="pub-status">Under Review</div>
-          Freites, Andrea. "Chinese Investments and Environmental Governance in South America's Extractive Sector: Evidence from Argentina, Chile, and Peru." <em>Journal of Energy &amp; Environment.</em>
-        </li>
-        <li class="under-review">
-          <div class="pub-status">Under Review</div>
-          Freites, Andrea. "Chinese investments in Chile and their effect on public opinion." <em>Journal of Current Chinese Affairs.</em>
-        </li>
-        <li class="under-review">
-          <div class="pub-status">Under Review</div>
-          Agostinis, Giovanni; Urdinez, Francisco; Telias, Diego; Freites, Andrea. "Segmented Leadership and Strategic Complementarity: Chinese and U.S. Renewable Energy Investments in South America." <em>Review of International Political Economy.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2025</div>
-          Freites, Andrea; Martínez, Gonzalo. "The Efficacy of Chile's Turquoise Foreign Policy." <em>Revista Estudios Internacionales.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2024</div>
-          Giraudy, Agustina; Urdinez, Francisco; Freites, Andrea. "Digging Deeper: Subnational Political Drivers of Chinese Extractive Investment in Latin America." <em>The Extractive Industries and Society.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2024</div>
-          Freites, Andrea. "Factors Determining Environmental Concerns Regarding Chinese Investment in South America's Extractive Sector." <em>The Extractive Industries and Society.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2023</div>
-          Freites, Andrea. "Factions and Agenda-Setting in the G20 (2008–2019)." <em>Latin American Journal of Asian Studies.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2023</div>
-          Freites, Andrea. "El Esequibo: Limitaciones de los mecanismos de solución pacífica." <em>Revista Tribuna Internacional.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2021</div>
-          Freites, Andrea. "The Role of Institutionalization in G20 Agenda-Setting." <em>Conjuntura Internacional (PUC Minas).</em>
-        </li>
-      </ul>
+  <div class="section">
+    <h2>Peer-Reviewed Journal Articles</h2>
+
+    <div class="pub-item under-review">
+      <p class="pub-status">Under Review</p>
+      <p class="pub-text">Freites, Andrea. "Chinese Investments and Environmental Governance in South America's Extractive Sector: Evidence from Argentina, Chile, and Peru." <em>Journal of Energy &amp; Environment.</em></p>
     </div>
-
-    <div class="section">
-      <h2>Book Chapters</h2>
-      <ul class="pub-list">
-        <li class="under-review">
-          <div class="pub-status">Under Review</div>
-          Freites, Andrea. "Environmental Compliance and Governance in the Context of Chinese Investment: The Case of Chile." <em>Routledge Globalization: Law and Policy Series.</em>
-        </li>
-      </ul>
+    <div class="pub-item under-review">
+      <p class="pub-status">Under Review</p>
+      <p class="pub-text">Freites, Andrea. "Chinese investments in Chile and their effect on public opinion." <em>Journal of Current Chinese Affairs.</em></p>
     </div>
-
-    <div class="section">
-      <h2>Policy Outputs, Reports &amp; Public Commentary</h2>
-      <ul class="pub-list">
-        <li class="published">
-          <div class="pub-status">2026</div>
-          Rehner, J., Freites, A., Lorie, A., &amp; Atienza, M. "Gobernanza socioambiental y presencia china: el caso de Chile." In <em>América Latina, China y una Transición Energética Justa: Serie de Documentos de Trabajo.</em> Centro de Estudios sobre China y Asia-Pacífico (CECHAP), Universidad del Pacífico / Global Development Policy Center, Boston University.
-        </li>
-        <li class="published">
-          <div class="pub-status">2025</div>
-          Freites, Andrea; Herrera, José. "Navigating Chinese Investment for a Socio-Ecological Transition in Latin America." <em>Política Exterior Progresista.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2024</div>
-          Freites, Andrea. "Lithium Governance in Chile." <em>EMERICS.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2024</div>
-          Freites, Andrea. "Venezuela: Elections and Economic Challenges." <em>EMERICS.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">2023</div>
-          Ríos, María Elvira; Figueroa, Janny; Freites, Andrea. "Central Hidroeléctrica Rucalhue." <em>ICLAC.</em>
-        </li>
-        <li class="published">
-          <div class="pub-status">Various</div>
-          Additional op-eds and policy briefs for EMERICS, ICN Digital, Reporte Asia, and Dialogue Earth.
-        </li>
-      </ul>
+    <div class="pub-item under-review">
+      <p class="pub-status">Under Review</p>
+      <p class="pub-text">Agostinis, Giovanni; Urdinez, Francisco; Telias, Diego; Freites, Andrea. "Segmented Leadership and Strategic Complementarity: Chinese and U.S. Renewable Energy Investments in South America." <em>Review of International Political Economy.</em></p>
     </div>
-  </main>
+    <div class="pub-item published">
+      <p class="pub-status">2025</p>
+      <p class="pub-text">Freites, Andrea; Martínez, Gonzalo. "The Efficacy of Chile's Turquoise Foreign Policy." <em>Revista Estudios Internacionales.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2024</p>
+      <p class="pub-text">Giraudy, Agustina; Urdinez, Francisco; Freites, Andrea. "Digging Deeper: Subnational Political Drivers of Chinese Extractive Investment in Latin America." <em>The Extractive Industries and Society.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2024</p>
+      <p class="pub-text">Freites, Andrea. "Factors Determining Environmental Concerns Regarding Chinese Investment in South America's Extractive Sector." <em>The Extractive Industries and Society.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2023</p>
+      <p class="pub-text">Freites, Andrea. "Factions and Agenda-Setting in the G20 (2008–2019)." <em>Latin American Journal of Asian Studies.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2023</p>
+      <p class="pub-text">Freites, Andrea. "El Esequibo: Limitaciones de los mecanismos de solución pacífica." <em>Revista Tribuna Internacional.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2021</p>
+      <p class="pub-text">Freites, Andrea. "The Role of Institutionalization in G20 Agenda-Setting." <em>Conjuntura Internacional (PUC Minas).</em></p>
+    </div>
+  </div>
 
-  <footer>
-    Contact: <a href="mailto:apfreites@uc.cl">apfreites@uc.cl</a>
-  </footer>
+  <div class="section">
+    <h2>Book Chapters</h2>
+    <div class="pub-item under-review">
+      <p class="pub-status">Under Review</p>
+      <p class="pub-text">Freites, Andrea. "Environmental Compliance and Governance in the Context of Chinese Investment: The Case of Chile." <em>Routledge Globalization: Law and Policy Series.</em></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Policy Outputs, Reports &amp; Public Commentary</h2>
+    <div class="pub-item published">
+      <p class="pub-status">2026</p>
+      <p class="pub-text">Rehner, J., Freites, A., Lorie, A., &amp; Atienza, M. "Gobernanza socioambiental y presencia china: el caso de Chile." In <em>América Latina, China y una Transición Energética Justa: Serie de Documentos de Trabajo.</em> CECHAP, Universidad del Pacífico / Global Development Policy Center, Boston University.</p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2025</p>
+      <p class="pub-text">Freites, Andrea; Herrera, José. "Navigating Chinese Investment for a Socio-Ecological Transition in Latin America." <em>Política Exterior Progresista.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2024</p>
+      <p class="pub-text">Freites, Andrea. "Lithium Governance in Chile." <em>EMERICS.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2024</p>
+      <p class="pub-text">Freites, Andrea. "Venezuela: Elections and Economic Challenges." <em>EMERICS.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">2023</p>
+      <p class="pub-text">Ríos, María Elvira; Figueroa, Janny; Freites, Andrea. "Central Hidroeléctrica Rucalhue." <em>ICLAC.</em></p>
+    </div>
+    <div class="pub-item published">
+      <p class="pub-status">Various</p>
+      <p class="pub-text">Additional op-eds and policy briefs for EMERICS, ICN Digital, Reporte Asia, and Dialogue Earth.</p>
+    </div>
+  </div>
+
+  <footer>Contact: <a href="mailto:apfreites@uc.cl">apfreites@uc.cl</a></footer>
+
+</div>
 </body>
 </html>
