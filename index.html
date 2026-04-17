@@ -2,65 +2,300 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Andrea Freites</title>
-  <link rel="stylesheet" href="assets/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Freites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-name {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.88rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #222; }
+
+    .nav-links a.active {
+      color: #222;
+      font-weight: 500;
+      border-bottom: 1.5px solid #222;
+      padding-bottom: 1px;
+    }
+
+    /* Two-column layout */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Photo */
+    .photo-col img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* Right column */
+    .text-col h1 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+      color: #222;
+    }
+
+    .subtitle {
+      font-size: 0.92rem;
+      color: #666;
+      font-weight: 300;
+      margin-bottom: 0.1rem;
+    }
+
+    .institution {
+      font-size: 0.92rem;
+      color: #666;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .institution a { color: #1a5276; text-decoration: none; }
+    .institution a:hover { text-decoration: underline; }
+
+    /* Bio */
+    .bio { margin-bottom: 1.75rem; }
+
+    .bio p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 0.85rem;
+    }
+
+    .bio a { color: #1a5276; text-decoration: none; }
+    .bio a:hover { text-decoration: underline; }
+
+    /* Research tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #f4f4f2;
+      color: #555;
+      border: 0.5px solid #ddd;
+    }
+
+    /* Recent work */
+    .recent-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.85rem 0;
+      border-top: 0.5px solid #e8e8e8;
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: #aaa;
+      white-space: nowrap;
+      min-width: 2.8rem;
+    }
+
+    .news-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .news-text em { font-style: italic; }
+    .news-text a { color: #1a5276; text-decoration: none; }
+    .news-text a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid #e8e8e8;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    footer a { color: #1a5276; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 620px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .photo-col img {
+        width: 140px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+      }
+      nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
+<div class="page-wrap">
 
-<!-- Header centrado -->
-<header style="text-align: center; margin-bottom: 30px;">
-  <img src="assets/fotoaf.jpg" alt="Andrea Freites" style="width:150px; border-radius:50%; margin-bottom:15px;">
-  <h1>Andrea Freites</h1>
-  <p>
-    PhD Candidate in Political Science | 
-    <a href="https://cienciapolitica.uc.cl" target="_blank" rel="noopener noreferrer">
-      Pontificia Universidad Católica de Chile
-    </a>
-  </p>
-  <p>(International Relations & Research Methods)</p>
-</header>
+  <nav>
+    <a href="index.html" class="nav-name">Andrea Freites</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Bio</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
 
-<!-- Sección de presentación: solo texto -->
-<section style="margin-bottom: 30px;">
-  <p>
-    Andrea Freites is a PhD candidate in Political Science (International Relations and Research Methods)
-    at Pontificia Universidad Católica de Chile</a>
-    and a doctoral researcher at the 
-    <a href="https://iclac.cl/eng/" target="_blank" rel="noopener noreferrer">Millennium Nucleus on the Impacts of China in Latin America and the Caribbean (ICLAC)</a>. 
-    She holds a M.A. in Political Science, a M.A. in International Studies (Highest Distinction), a Master’s in Values and Citizenship Education, 
-    and a B.A. in Education.
-  </p>
-  <p>
-    Her research focuses on China–Latin America relations, environmental governance, green transition, extractive industries, 
-    and regulatory compliance.
-  </p>
-   <p>
-  Andrea currently works as an editorial assistant for the 
-  <a href="https://revistacienciapolitica.uc.cl/index.php/rcp/index" target="_blank" rel="noopener noreferrer">Revista de Ciencia Política</a> 
-  at Pontificia Universidad Católica de Chile. 
-  In this role, she supports manuscript management, communicates with authors and reviewers, 
-  assists in ensuring the smooth progression of the editorial process, and contributes to 
-  the journal's commitment to high-quality academic publishing.
-</p>
-     
-</section>
+  <div class="main-grid">
 
-<!-- Quick Links -->
-<section>
-  <h2>Quick Links</h2>
-  <ul>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="teaching.html">Teaching</a></li>
-    <li><a href="cv.html">CV</a></li>
-  </ul>
-</section>
+    <div class="photo-col">
+      <img src="assets/fotoaf.jpg" alt="Andrea Freites">
+    </div>
 
-<!-- Footer -->
-<footer style="margin-top:30px;">
-  <p>Contact: <a href="mailto:apfreites@uc.cl">apfreites@uc.cl</a></p>
-</footer>
+    <div class="text-col">
+      <h1>Andrea Freites</h1>
+      <p class="subtitle">PhD Candidate in Political Science</p>
+      <p class="institution">
+        <a href="https://cienciapolitica.uc.cl" target="_blank" rel="noopener noreferrer">Pontificia Universidad Católica de Chile</a>
+        &nbsp;·&nbsp;
+        <a href="https://iclac.cl/eng/" target="_blank" rel="noopener noreferrer">ICLAC</a>
+      </p>
 
+      <div class="bio">
+        <p>
+          Andrea Freites is a PhD candidate in Political Science (International Relations and Research Methods)
+          at Pontificia Universidad Católica de Chile and a doctoral researcher at the
+          <a href="https://iclac.cl/eng/" target="_blank" rel="noopener noreferrer">Millennium Nucleus on the Impacts of China in Latin America and the Caribbean (ICLAC)</a>.
+          She holds a M.A. in Political Science, a M.A. in International Studies (Highest Distinction),
+          a Master's in Values and Citizenship Education, and a B.A. in Education.
+        </p>
+        <p>
+          Her research focuses on China–Latin America relations, environmental governance, green transition,
+          extractive industries, and regulatory compliance.
+        </p>
+        <p>
+          She also serves as editorial assistant for the
+          <a href="https://revistacienciapolitica.uc.cl/index.php/rcp/index" target="_blank" rel="noopener noreferrer">Revista de Ciencia Política</a>
+          at Pontificia Universidad Católica de Chile, supporting manuscript management, peer-review coordination,
+          and the journal's editorial process.
+        </p>
+      </div>
+
+      <div class="tags">
+        <span class="tag">China–Latin America</span>
+        <span class="tag">Environmental Governance</span>
+        <span class="tag">Extractive Industries</span>
+        <span class="tag">Green Transition</span>
+        <span class="tag">Mixed Methods</span>
+      </div>
+
+      <p class="recent-label">Recent work</p>
+
+      <div class="news-item">
+        <span class="news-date">2026</span>
+        <span class="news-text">
+          Rehner, J., Freites, A. et al. "Gobernanza socioambiental y presencia china: el caso de Chile."
+          <em>CECHAP / Boston University.</em>
+        </span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2025</span>
+        <span class="news-text">
+          Freites, A.; Martínez, G. "The Efficacy of Chile's Turquoise Foreign Policy."
+          <em>Revista Estudios Internacionales.</em>
+        </span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2024</span>
+        <span class="news-text">
+          Giraudy, A.; Urdinez, F.; Freites, A. "Digging Deeper: Subnational Political Drivers of Chinese Extractive Investment in Latin America."
+          <em>The Extractive Industries and Society.</em>
+        </span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2024</span>
+        <span class="news-text">
+          Freites, A. "Factors Determining Environmental Concerns Regarding Chinese Investment in South America's Extractive Sector."
+          <em>The Extractive Industries and Society.</em>
+        </span>
+      </div>
+
+      <footer>
+        Contact: <a href="mailto:apfreites@uc.cl">apfreites@uc.cl</a>
+      </footer>
+
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
