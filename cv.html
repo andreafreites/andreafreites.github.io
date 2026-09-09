@@ -1,3 +1,11 @@
+Sí, tiene mucho sentido — es lo más común en sitios académicos. La página CV queda más limpia y siempre está actualizada sin tener que editar el HTML cada vez.
+
+La página quedaría así: un párrafo breve con tus áreas y un botón para descargar el PDF. Para eso necesitas:
+
+1. Subir el archivo `FreitesA_cv.pdf` a tu carpeta `assets/` en GitHub
+2. Reemplazar tu `cv.html` con esto:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +25,34 @@
     .nav-links a { color: #555; text-decoration: none; }
     .nav-links a:hover { color: #222; }
     .nav-links a.active { color: #222; font-weight: 500; border-bottom: 1.5px solid #222; padding-bottom: 1px; }
-    h1 { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 0.3rem; color: #222; }
-    h2 { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: #888; margin: 2rem 0 0.6rem; padding-bottom: 0.35rem; border-bottom: 0.5px solid #eee; }
-    p { font-size: 0.92rem; line-height: 1.75; color: #333; margin-bottom: 0.5rem; }
+    h1 { font-family: 'Lora', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 1.5rem; color: #222; }
+    p { font-size: 0.95rem; line-height: 1.8; color: #333; margin-bottom: 0.85rem; }
     a { color: #1a7a5e; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
-    li { font-size: 0.92rem; color: #333; margin-bottom: 0.25rem; line-height: 1.6; }
-    table { width: 100%; border-collapse: collapse; }
-    td { padding: 0.45rem 0.5rem; vertical-align: top; font-size: 0.92rem; color: #333; border-top: 0.5px solid #f0f0f0; }
-    td:first-child { white-space: nowrap; color: #aaa; font-size: 0.8rem; width: 9rem; padding-right: 1rem; }
-    .cv-intro { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid #eee; }
-    .cv-intro .subtitle { font-size: 0.9rem; color: #666; font-weight: 300; margin-bottom: 0.1rem; }
-    .cv-intro .inst { font-size: 0.9rem; color: #888; font-weight: 300; margin-bottom: 0; }
-    .note { font-size: 0.85rem; color: #888; font-style: italic; }
-    footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 0.5px solid #e8e8e8; font-size: 0.85rem; color: #888; }
-    @media (max-width: 620px) { nav { flex-direction: column; align-items: flex-start; } td:first-child { width: 6rem; } }
+    .cv-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1.5px solid #1a7a5e;
+      border-radius: 4px;
+      color: #1a7a5e;
+      font-size: 0.88rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .cv-download:hover {
+      background: #1a7a5e;
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-icons { display: flex; gap: 8px; margin-top: 3rem; padding-top: 1.25rem; border-top: 0.5px solid #e8e8e8; }
+    .footer-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ccc; color: #555; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .footer-icon:hover { border-color: #1a7a5e; color: #1a7a5e; }
+    @media (max-width: 620px) { nav { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
@@ -49,83 +69,38 @@
     </ul>
   </nav>
 
-  <div class="cv-intro">
-    <h1>Andrea Freites H.</h1>
-    <p class="subtitle">PhD Candidate in Political Science (International Relations &amp; Research Methods)</p>
-    <p class="inst">Institute of Political Science — Pontificia Universidad Católica de Chile</p>
-    <p class="inst"><a href="https://iclac.cl/eng/" target="_blank" rel="noopener noreferrer">ICLAC</a> — Millennium Nucleus on the Impacts of China in Latin America and the Caribbean</p>
-    <p class="inst" style="margin-top:0.4rem;"><a href="mailto:apfreites@uc.cl">apfreites@uc.cl</a></p>
+  <h1>CV</h1>
+
+  <p>
+    My research focuses on global political economy, environmental governance and extractive industries,
+    China–Latin America relations, and mixed methods in international relations.
+    I am a PhD in Political Science (International Relations &amp; Research Methods)
+    from the <a href="https://cienciapolitica.uc.cl" target="_blank" rel="noopener noreferrer">Pontificia Universidad Católica de Chile</a>
+    and a researcher at <a href="https://iclac.cl/eng/" target="_blank" rel="noopener noreferrer">ICLAC</a>.
+  </p>
+
+  <p>Last updated: August 2026.</p>
+
+  <a href="assets/FreitesA_cv.pdf" target="_blank" rel="noopener noreferrer" class="cv-download">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download CV (PDF)
+  </a>
+
+  <div class="footer-icons">
+    <a href="mailto:apfreites@uc.cl" title="Email" class="footer-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/andrea-p-a-freites-h-539843b3/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="footer-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?user=FX0-ZZYAAAAJ&hl=es" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="footer-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+    </a>
   </div>
 
-  <h2>Education</h2>
-  <table>
-    <tr><td>2022–2026 (exp.)</td><td>PhD in Political Science (International Relations &amp; Research Methods) — Pontificia Universidad Católica de Chile</td></tr>
-    <tr><td>2024</td><td>MA in Political Science — Pontificia Universidad Católica de Chile</td></tr>
-    <tr><td>2021</td><td>MA in International Studies (Highest Distinction) — Universidad de Chile</td></tr>
-    <tr><td>2016</td><td>MEd in Values and Citizenship Education (Highest Distinction) — Universidad Católica Andrés Bello</td></tr>
-    <tr><td>2008</td><td>BA in Education — Universidad Central de Venezuela</td></tr>
-  </table>
-  <p class="note" style="margin-top:0.6rem;">Additional Training: Certificate in Chinese Studies, Universidad de Chile (2021). Mixed Methods Summer School, PUC (2024-2026). Courses in Data Analysis in R, Introduction to Python, Applied Econometrics for Social Sciences (2021–2022). Languages: Spanish (native), English (proficiency), French (beginner).</p>
-
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Global Political Economy</li>
-    <li>Environmental Governance and Extractive Industries</li>
-    <li>China–Latin America Relations</li>
-    <li>South–South Cooperation</li>
-    <li>Quantitative and Mixed Methods in International Relations</li>
-  </ul>
-
-  <h2>Publications</h2>
-  <p class="note">See <a href="publications.html">Publications</a> page for full list.</p>
-
-  <h2>Teaching</h2>
-  <p class="note">See <a href="teaching.html">Teaching</a> page for full list.</p>
-
-  <h2>Research Positions</h2>
-  <table>
-    <tr><td>2023–Present</td><td>Doctoral Researcher — ICLAC (Millennium Nucleus, ANID)</td></tr>
-    <tr><td>2025–2026</td><td>Junior Researcher — Ford Foundation / Fudan University / Universidad del Pacífico</td></tr>
-    <tr><td>2025</td><td>Junior Researcher — ACCWS &amp; Universidad de Chile</td></tr>
-    <tr><td>2022</td><td>Research Assistant — China–Latin America Working Group, PUC</td></tr>
-    <tr><td>2020–2021</td><td>Research Assistant — Universidad de Chile; National University of Singapore collaborations</td></tr>
-  </table>
-
-  <h2>Editorial Service</h2>
-  <table>
-    <tr>
-      <td>2023–Present</td>
-      <td>Editorial Manager — <a href="https://revistacienciapolitica.uc.cl/index.php/rcp/index" target="_blank" rel="noopener noreferrer">Revista de Ciencia Política</a>, Pontificia Universidad Católica de Chile</td>
-    </tr>
-  </table>
-
-  <h2>Professional Service</h2>
-  <table>
-    <tr><td>2016–2025</td><td>Analyst — Fundación Gente de la Calle, Santiago de Chile</td></tr>
-    <tr><td>2007–2015</td><td>Manager — Consejo Moral Republicano, Caracas, Venezuela</td></tr>
-  </table>
-
-  <h2>Scholarships &amp; Awards</h2>
-  <table>
-    <tr><td>2025</td><td>ANID Internship Scholarship — Universidad de Barcelona</td></tr>
-    <tr><td>2022-2026</td><td>National Doctoral Scholarship — ANID, Chile</td></tr>
-    <tr><td>2022</td><td>Scholarship OEA-ANID</td></tr>
-    <tr><td>2022</td><td>Doctoral Scholarship — Vice-Rectorate of Research, PUC (Assistant Scholar)</td></tr>
-    <tr><td>2022</td><td>Most Outstanding Worker — Fundación Gente de la Calle</td></tr>
-    <tr><td>2021</td><td>Highest Distinction — MA, Universidad de Chile</td></tr>
-    <tr><td>2021</td><td>Research Competition Award — Institute of International Studies-FIDA</td></tr>
-    <tr><td>2013</td><td>Professional Exchange — Rotary Foundation (Sweden–Venezuela)</td></tr>
-    <tr><td>2008</td><td>Highest Distinction — BA Degree Examination, Universidad Central de Venezuela</td></tr>
-  </table>
-
- <footer>
-  <a href="mailto:apfreites@uc.cl" target="_blank" rel="noopener noreferrer" title="Email" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; border:1px solid #ccc; color:#555; text-decoration:none; margin-right:8px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-  </a>
-  <a href="https://www.linkedin.com/in/andrea-p-a-freites-h-539843b3/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; border:1px solid #ccc; color:#555; text-decoration:none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-  </a>
-</footer>
 </div>
 </body>
 </html>
+```
+
+Recuerda subir también `FreitesA_cv.pdf` a la carpeta `assets/` en GitHub, al mismo nivel que `fotoaf.jpg`.
