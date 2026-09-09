@@ -74,6 +74,13 @@
       display: block;
     }
 
+    .photo-icons {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
     .text-col h1 {
       font-family: 'Lora', serif;
       font-size: 2rem;
@@ -162,14 +169,6 @@
     .news-text a { color: #1a7a5e; text-decoration: none; }
     .news-text a:hover { text-decoration: underline; }
 
-    footer {
-      margin-top: 2.5rem;
-      padding-top: 1.25rem;
-      border-top: 0.5px solid #e8e8e8;
-    }
-
-    .footer-icons { display: flex; gap: 8px; }
-
     .footer-icon {
       display: inline-flex;
       align-items: center;
@@ -191,6 +190,7 @@
     @media (max-width: 620px) {
       .main-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .photo-col img { width: 140px; aspect-ratio: 1 / 1; border-radius: 50%; }
+      .photo-icons { justify-content: flex-start; }
       nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -213,6 +213,17 @@
 
     <div class="photo-col">
       <img src="assets/fotoaf.jpg" alt="Andrea Freites">
+      <div class="photo-icons">
+        <a href="mailto:apfreites@uc.cl" title="Email" class="footer-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/andrea-p-a-freites-h-539843b3/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="footer-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=FX0-ZZYAAAAJ&hl=es" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="footer-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="text-col">
@@ -235,16 +246,17 @@
         <p>
           My research sits at the intersection of global political economy, environmental governance,
           and China–Latin America relations. I study how host-country institutional frameworks shape
-          the environmental performance of Chinese-owned firms in South America's extractive industries. My dissertation argues that regulatory fragmentation
-          is not necessarily a weakness: under certain conditions, parallel institutional architectures act
-          as redundant veto systems that contain the structural power of foreign capital more reliably
-          than centralized ones.
+          the environmental performance of Chinese-owned firms in South America's extractive industries.
+          My dissertation argues that regulatory fragmentation is not necessarily a weakness: under
+          certain conditions, parallel institutional architectures act as redundant veto systems that
+          contain the structural power of foreign capital more reliably than centralized ones.
         </p>
         <p>
           My current research agenda extends this argument to the governance of strategic assets,
           examining how different institutional architectures — parallel, single-veto, or absent —
-          affect states' capacity to contain foreign investment in lithium sector. This work contributes to debates on veto player theory,
-          institutional layering, and the comparative politics of investment screening.
+          affect states' capacity to contain foreign investment in the lithium sector. This work
+          contributes to debates on veto player theory, institutional layering, and the comparative
+          politics of investment screening.
         </p>
         <p>
           I also serve as editorial assistant for the
@@ -290,20 +302,6 @@
           <em>The Extractive Industries and Society.</em>
         </span>
       </div>
-
-      <footer>
-        <div class="footer-icons">
-          <a href="mailto:apfreites@uc.cl" title="Email" class="footer-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/andrea-p-a-freites-h-539843b3/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="footer-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://scholar.google.com/citations?user=FX0-ZZYAAAAJ&hl=es" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="footer-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
-          </a>
-        </div>
-      </footer>
 
     </div>
   </div>
